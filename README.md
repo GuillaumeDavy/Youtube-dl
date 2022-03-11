@@ -2,7 +2,7 @@
 
 ## Requirements
 
-1. This project require python interpreter version 3+. Please install it before going further. [Python installation](https://www.python.org/downloads/)
+1. This project require python interpreter. Please install it before going further. [Python installation](https://www.python.org/downloads/)
 
 2. Install pip by following the [documentation](https://pip.pypa.io/en/stable/installation/) 
 
@@ -43,8 +43,15 @@ Alternatively, refer to the [developer instructions](#developer-instructions) fo
 
 ## Launch the project
 
-To launch the project, just run `./start.sh`
+To launch the project, just run `python launchserver.py`
 
-#DEVELOPMENT
+# HOW TO USE ?
+
+1. [Download postman](https://www.postman.com/downloads/)
+2. Create an HTTP GET request to `http://localhost:8080/api/video/<video_id>`
+
+To test it, you can use the video id `668nUCeBHyY`
+
+# DEVELOPMENT
 
 Follow the [readme of the project](https://github.com/ytdl-org/youtube-dl)
