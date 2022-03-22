@@ -1,6 +1,6 @@
 # INSTALLATION
 
-## Requirements
+## Requirements for dev
 
 1. This project require python interpreter. Please install it before going further. [Python installation](https://www.python.org/downloads/)
 
@@ -43,12 +43,13 @@ Alternatively, refer to the [developer instructions](#developer-instructions) fo
 
 ## Launch the project
 
-To launch the project, just run `python launchserver.py`
+DEV : To launch the project, just run `python launchserver.py`
+USERS : To launch the project, just run `python launchdocker.py`, it will create a docker archive then start the docker, it may takes several minutes.
 
 # HOW TO USE ?
 
 1. [Download postman](https://www.postman.com/downloads/)
-2. Create an HTTP GET request to `http://localhost:8080/api/video/<video_id>`
+2. Create an HTTP GET request to `http://localhost:5001/api/video/<video_id>`
 
 To test it, you can use the video id `668nUCeBHyY`
 

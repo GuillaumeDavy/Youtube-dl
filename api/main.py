@@ -10,6 +10,7 @@ app = Flask(__name__)
 
 @app.route('/api/video/<video_url>', methods=['GET'])
 def get_video(video_url):
+    print("Hello here")
     subprocess.run(['youtube-dl', video_url, '--write-thumbnail', '--write-info-json'])
     json_file = [f for f in listdir() if ".json" in f][0]
     with open(json_file) as json_data:
@@ -19,4 +20,4 @@ def get_video(video_url):
 
 
 if __name__ == '__main__':
-    app.run(host='localhost', port=8080, debug=True)
+    app.run(host ='0.0.0.0', port = 5001, debug = True) 
