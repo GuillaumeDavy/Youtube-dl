@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 @app.route('/api/video/<video_url>', methods=['GET'])
 def get_video(video_url):
-    subprocess.call("youtube-dl " + video_url + " --write-thumbnail --write-info-json", shell=True)
+    subprocess.run(['youtube-dl', video_url, '--write-thumbnail', '--write-info-json'])
     json_file = [f for f in listdir() if ".json" in f][0]
     with open(json_file) as json_data:
         pretty_json = json.load(json_data)
