@@ -49,7 +49,7 @@ USERS : To launch the project, just run `python launchdocker.py`, it will create
 # HOW TO USE ?
 
 1. [Download postman](https://www.postman.com/downloads/)
-2. Create an HTTP GET request to `http://localhost:5001/api/video/<video_id>`
+2. Create an HTTP GET request to `http://0.0.0.0:5001/api/video/<video_id>`
 
 To test it, you can use the video id `668nUCeBHyY`
 
