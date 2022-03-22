@@ -3,6 +3,8 @@
 
 from __future__ import unicode_literals
 
+from matplotlib.cbook import print_cycles
+
 __license__ = 'Public Domain'
 
 import codecs
