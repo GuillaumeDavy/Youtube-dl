@@ -47,9 +47,14 @@ DEV : To launch the project, just run `python launchserver.py`
 USERS : To launch the project, just run `python launchdocker.py`, it will create a docker archive then start the docker, it may takes several minutes.
 
 # HOW TO USE ?
-
 1. [Download postman](https://www.postman.com/downloads/)
-2. Create an HTTP GET request to `http://0.0.0.0:5001/api/video/<video_id>`
+2. Create an HTTP request and add the url of the route defined under.
+##Routes
+
+GET `http://0.0.0.0:5001/api/video/download/<video_id>`: download thumbnail, video, info and return the info in JSON.<br/>
+GET `http://0.0.0.0:5001/api/video/thumbnail/<video_id>`: return the thumbnail of the video.<br/>
+
+Create an HTTP GET request to 
 
 To test it, you can use the video id `668nUCeBHyY`
 
