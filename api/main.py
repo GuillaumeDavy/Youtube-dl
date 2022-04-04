@@ -15,6 +15,7 @@ def download_video(video_id):
     if not json_file_array:
         raise FileNotFoundError("Video information in JSON file with id=" + video_id + " not found.")
     else:
+        json_file = json_file_array[0]
         with open(json_file) as json_data:
             pretty_json = json.load(json_data)
             os.remove(json_file)
