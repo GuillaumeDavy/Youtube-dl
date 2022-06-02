@@ -23,6 +23,7 @@ class YoutubeVideoNotFound(Exception):
     """
     Exception class that is raised when a video is not found on youtube
     """
+
     def __init__(self, message):
         super().__init__(message)
         self.message = message
@@ -38,6 +39,7 @@ class FileNotFound(Exception):
     """
     Exception class that is raised when a file is not found
     """
+
     def __init__(self, message):
         super().__init__(message)
         self.message = message
