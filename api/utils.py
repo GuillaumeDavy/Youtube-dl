@@ -38,7 +38,7 @@ def execute_download(video_id):
         raise YoutubeVideoNotFound("Video with id=" + video_id + " not found on Youtube.")
 
 
-def check_files_exist(json_file_array, video_file_array, thumbnail_file_array):
+def check_files_exist(json_file_array, video_file_array, thumbnail_file_array, video_id):
     """
     Check if the video info file, video file, and thumbnail file exist,
     if not, raise an exception.
@@ -55,6 +55,30 @@ def check_file_exists(file_array, error_message):
     if not file_array:
         # if the file does not exist, raise an exception
         raise FileNotFound(error_message)
+
+
+def get_thumbnail_file_array(video_id):
+    """
+    Get the thumbnail file array. Check for webp and jpg files.
+    """
+    webp = [f for f in listdir() if video_id + ".webp" in f]
+    jpeg = [f for f in listdir() if video_id + ".jpg" in f]
+    if webp:
+        return webp
+    if jpeg:
+        return jpeg
+
+
+def delete_files(json_file_array, video_file_array, thumbnail_file_array):
+    """
+    Delete the video info file, video file, and thumbnail file.
+    """
+    if os.path.exists(json_file_array[0]):
+        os.remove(json_file_array[0])
+    if os.path.exists(video_file_array[0]):
+        os.remove(video_file_array[0])
+    if os.path.exists(thumbnail_file_array[0]):
+        os.remove(thumbnail_file_array[0])
 
 
 def move_files(json_file_array, video_file_array, thumbnail_file_array):

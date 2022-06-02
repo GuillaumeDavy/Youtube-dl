@@ -11,7 +11,8 @@ from utils import (
     move_files,
     info_directory,
     video_directory,
-    thumbnail_directory
+    thumbnail_directory,
+    get_thumbnail_file_array,
 )
 from pathlib import Path
 
@@ -36,12 +37,13 @@ def download_video(video_id):
 
     json_file_array = [f for f in listdir() if video_id + ".info.json" in f]
     video_file_array = [f for f in listdir() if video_id + ".mp4" in f]
-    thumbnail_file_array = [f for f in listdir() if video_id + ".webp" in f]
+    thumbnail_file_array = get_thumbnail_file_array(video_id)
 
     # check if the video info file, video file, and thumbnail file exist
     try:
-        check_files_exist(json_file_array, video_file_array, thumbnail_file_array)
+        check_files_exist(json_file_array, video_file_array, thumbnail_file_array, video_id)
     except FileNotFound as e:
+        delete_files(json_file_array, video_file_array, thumbnail_file_array)
         return ErrorMessage(404, e, video_id).toJson(), 404
 
     # if the video info file exists, read the JSON file and return the video info as JSON

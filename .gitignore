@@ -31,6 +31,7 @@ updates_key.pem
 *.m4v
 *.mp3
 *.webp
+*.jpg
 *.info.json
 *.3gp
 *.wav
