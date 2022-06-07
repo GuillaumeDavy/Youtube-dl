@@ -25,6 +25,7 @@ def execute_download(video_id):
     to see if the download was successful.
     If not, raise an exception.
     """
+
     # call youtube-dl to download the video
     proc = subprocess.Popen(["youtube-dl", video_id, '--write-thumbnail', '--write-info-json', '-f', 'worst'])
     # wait for the process to finish
