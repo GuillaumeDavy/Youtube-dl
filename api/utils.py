@@ -3,9 +3,9 @@ import shutil
 from os import listdir
 from error import YoutubeVideoNotFound, FileNotFound
 
-info_directory = "../videos/info"
-video_directory = "../videos/video"
-thumbnail_directory = "../videos/thumbnail"
+info_directory = "../video_storage/infos"
+video_directory = "../video_storage/videos"
+thumbnail_directory = "../video_storage/thumbnails"
 
 
 def is_video_already_downloaded(video_id):
