@@ -24,6 +24,7 @@ def download_video(video_id):
     """
     Download the video from youtube and save it in the videos directory.
     """
+    print("HELLO")
     # check if the video has already been downloaded
     if(is_video_already_downloaded(video_id)) is True:
         # if the video has already been downloaded, return 409 conflict

@@ -12,11 +12,9 @@ def is_video_already_downloaded(video_id):
     """
     Check if the video has already been downloaded.
     """
-    json_file_array = [f for f in listdir(info_directory) if video_id + ".info.json" in f]
     video_file_array = [f for f in listdir(video_directory) if video_id + ".mp4" in f]
-    thumbnail_file_array = [f for f in listdir(thumbnail_directory) if video_id + ".webp" in f]
 
-    if json_file_array and video_file_array and thumbnail_file_array:
+    if video_file_array:
         return True
     return False
 
