@@ -1,7 +1,7 @@
 import json
 import os
 from os import listdir
-from error import ErrorMessage, YoutubeVideoNotFound
+from error import ErrorMessage, YoutubeVideoNotFound, YoutubeVideoAlreadyDownloaded
 from flask import Flask, jsonify, send_file
 from utils import (
     is_video_already_downloaded,
@@ -28,7 +28,7 @@ def download_video(video_id):
     # check if the video has already been downloaded
     if(is_video_already_downloaded(video_id)) is True:
         # if the video has already been downloaded, return 409 conflict
-        return jsonify("Video " + video_id + " already downloaded"), 409
+        return ErrorMessage(409, YoutubeVideoAlreadyDownloaded("Video with id=" + video_id + " already downloaded."), video_id).toJson(), 409
 
     try:
         # execute the download of the video then check the return code

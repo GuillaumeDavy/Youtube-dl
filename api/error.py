@@ -35,6 +35,22 @@ class YoutubeVideoNotFound(Exception):
         return self.message
 
 
+class YoutubeVideoAlreadyDownloaded(Exception):
+    """
+    Exception class that is raised when a video is already downloaded
+    """
+
+    def __init__(self, message):
+        super().__init__(message)
+        self.message = message
+
+    def __str__(self):
+        return self.message
+
+    def get_message(self):
+        return self.message
+
+
 class FileNotFound(Exception):
     """
     Exception class that is raised when a file is not found
